@@ -42,4 +42,4 @@ Follow the instruction below for testing of the program:
 
 ## Author
 
-Christian Møller Strunge / [C-Strunge](https://github.com/C-Strunge)
+Casper Frost Andersen / [ortismal](https://github.com/ortismal)
