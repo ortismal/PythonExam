@@ -15,8 +15,8 @@ To run the application on your computer, follow the instructions below:
 # An overview of the application:
 
 ## Dealer
-At the beginning of the game, you will have to decide if you will be the "Dealer" or the "Player" if you type "d" (for dealer),
-the game will run as so:
+
+When you start the game, you decide whether to play as a player, or the dealer. If you type 'd' for dealer, the game will run as such:
 
   1. Player turn will be played automatically, and the player bet is fixed (20) every turn.
   2. You will automatically hit if below 17. 
