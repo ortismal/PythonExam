@@ -4,14 +4,17 @@ Blackjack exam for Python KEA 2019
 ### Assignment 2 - Blackjack
 
 ## Setup
-Follow the instructions, this will allow the project to be run on your PC: 
-  1. Download the project .zip to your computer (Green button "Clone or download) https://github.com/C-Strunge/PythonExam
-  2. Extract .zip file.
-  3. Open your IDE(I use Visual Studio Code), click File --> Open, choose the project you just extracted.
-  4. Make sure you're in the workspace ../Exam.
-  5. Write: "python BlackjackFinal.py' in the terminal.
 
-## Dealer
+To run the application on your computer, follow the instructions below:
+  1. Download the .zip project to your computer from this page: https://github.com/ortismal/PythonExam.
+  2. Extract the .zip file.
+  3. Open up your IDE (for example Visual Studio, or any other environment that can run Python).
+  4. Navigate to the workspace '../PythonExam'.
+  5. Open your terminal and write 'python BlackjackFinal.py' - this will start the program.
+
+## An overview of the application:
+
+# Dealer
 At the beginning of the game, you will have to decide if you will be the "Dealer" or the "Player" if you type "d" (for dealer),
 the game will run as so:
 
@@ -21,7 +24,7 @@ the game will run as so:
   4. Player balance is updated (depending on outcome). 
   5. Continue playing is asked, and you may type y/n for yes or no.
 
-## Player
+# Player
 If you decide to type "p" (play as player), you will have the following options, and the game will run as so:
 
   1. Decide how much you want to bet, you cannot bet more than your balance (starts at 100)
