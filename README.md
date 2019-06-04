@@ -12,9 +12,9 @@ To run the application on your computer, follow the instructions below:
   4. Navigate to the workspace '../PythonExam'.
   5. Open your terminal and write 'python BlackjackFinal.py' - this will start the program.
 
-## An overview of the application:
+# An overview of the application:
 
-# Dealer
+## Dealer
 At the beginning of the game, you will have to decide if you will be the "Dealer" or the "Player" if you type "d" (for dealer),
 the game will run as so:
 
@@ -24,7 +24,7 @@ the game will run as so:
   4. Player balance is updated (depending on outcome). 
   5. Continue playing is asked, and you may type y/n for yes or no.
 
-# Player
+## Player
 If you decide to type "p" (play as player), you will have the following options, and the game will run as so:
 
   1. Decide how much you want to bet, you cannot bet more than your balance (starts at 100)
