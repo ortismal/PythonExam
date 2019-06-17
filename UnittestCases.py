@@ -4,8 +4,6 @@ from Deck import Deck
 from Dealer import Dealer
 from Cards import Cards
 
-
-
 class uTestDeck(unittest.TestCase):
     
     # Test 1.1 deck size
@@ -52,13 +50,6 @@ class uTestHandSum(unittest.TestCase):
 
         self.assertEqual(player.checkSum(), 20, "Player hand should be = 20"),
         self.assertEqual(dealer.checkSum(), 17, "Dealer hand should be = 17"),
-
-# class uTestHandSum1(unittest.TestCase):
-#     pass
-#     # playerSum = player.checkSum()
-#     # self.assertEqual(sum > playerSum and sum > 16
-    
-
 
 
 if __name__ == '__main__':

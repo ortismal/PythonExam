@@ -4,10 +4,9 @@ from Dealer import Dealer
 
 player = Player([], False, 100, 0, True)
 dealer = Dealer([], False, False, False, False)
-
-# Used to define when game should end
 gameEnd = False
 
+# When the game starts, player turn is automatically set to true.
 while player.playerTurn:
     player.gameType(dealer)
 

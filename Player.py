@@ -9,28 +9,28 @@ class Player:
 
     # Method for defining card as value
     def checkSum(self):
-        currentVal = 0
+        currentPlayerVal = 0
         aces = 0
         for i in self.hand:
             if i.number == 'J' or i.number == 'Q' or i.number == 'K':
-                currentVal += 10
+                currentPlayerVal += 10
 
             elif i.number == 'A':
                 aces += 1
                 for i in self.hand:
                     if i.number == 'A':
-                        currentVal += self.acesValue(currentVal, aces, i)
+                        currentPlayerVal += self.acesValue(currentPlayerVal, aces, i)
                         aces -= 1
 
             # if just a numbered card cast as int and add to value
             else:
-                currentVal += int(i.number)
+                currentPlayerVal += int(i.number)
 
-        return currentVal
+        return currentPlayerVal
 
     # Method for defining value of aces (used in above method), to act as ace can have 2 values
-    def acesValue(self, currentVal, aces, i):
-        if i.number == 'A' and currentVal + 11 + aces - 1 > 21:
+    def acesValue(self, currentPlayerVal, aces, i):
+        if i.number == 'A' and currentPlayerVal + 11 + aces - 1 > 21:
             return 1
         elif i.number == 'A':
             return 11
@@ -49,12 +49,12 @@ class Player:
 
     # Ceck the total sum of player cards /w different conditions
     def checkValue(self):
-        currentVal = self.checkSum()
-        if currentVal == 21:
-            print(f"Player has ({currentVal}) Dealers turn")
+        currentPlayerVal = self.checkSum()
+        if currentPlayerVal == 21:
+            print(f"Player has ({currentPlayerVal}) Dealers turn")
             self.playerTurn = False
-        elif currentVal > 21:
-            print(f"Player has lost with ({currentVal})")
+        elif currentPlayerVal > 21:
+            print(f"Player has lost with ({currentPlayerVal})")
             self.balance = self.balance - self.bet
             self.playerTurn = False
             print(f"Bet: {self.bet} \n Balance: {self.balance}")
@@ -70,15 +70,15 @@ class Player:
         print("Total: ", self.checkSum())
     # Choose if as player you want to stay/hit depending on your current total
     def userTurn(self, dealer, deck):
-        currentVal = self.checkSum()
+        currentPlayerVal = self.checkSum()
         self.checkValue()
         hitOrStand = -1
         if self.isUser:
-            hitOrStand = input(f"Yor current total: {currentVal}, would you like to hit or to stad? (type hit / stand)")
-        if hitOrStand == "stand" or not self.isUser and currentVal > 16:
+            hitOrStand = input(f"Yor current total: {currentPlayerVal}, would you like to hit or to stad? (type hit / stand)")
+        if hitOrStand == "stand" or not self.isUser and currentPlayerVal > 16:
             print("Dealers turn")
             self.playerTurn = False
-        elif hitOrStand == "hit" or not self.isUser and currentVal <= 16:
+        elif hitOrStand == "hit" or not self.isUser and currentPlayerVal <= 16:
             self.hand.append(dealer.dealCards(deck))
             self.printCards()
             self.checkValue()
@@ -94,8 +94,8 @@ class Player:
             self.playerTurn = False
 
         elif playerOrDealer == "d":
-            self.isUser = False
             dealer.isUser = True
+            self.isUser = False
             print("Dealer is chosen, game will run automaticly")
             self.playerTurn = False
             dealer.isReveal = True
