@@ -9,11 +9,11 @@ class Dealer:
         self.dealerTurn = dealerTurn
         self.roundEnd = roundEnd
 
-    # Deal a card and remove it from the deck
+    # Deal card and remove from the "deck"
     def dealCards(self, deck):
         return deck.pop()
     
-    # Method for defining card value
+    # Method for defining card as value
     def checkSum(self):
         aces = 0
         currentVal = 0
@@ -34,20 +34,20 @@ class Dealer:
 
         return currentVal
 
-    # Defining value of aces
+    # Method for defining value of aces (used in above method), to act as ace can have 2 values
     def acesValue(self, currentVal, aces, i):
         if i.number == 'A' and currentVal + 11 + aces - 1 > 21:
             return 1
         elif i.number == 'A':
             return 11
 
-    # Makes dealer take his/her turn, and run method to check winning hand compared to player
+    # Make the dealer take his/hers turn, and run method to check winning hand compared to player
     def dealerTakeTurn(self, player, deck):
         self.isReveal = True
         self.printCards()
         self.checkWin(player)
         self.dealerTurn = True
-        # Dealer have to "hit" if the total is less than 16, and stand if the sum is 17 or above
+        # Dealer have to "hit" if the total is less than 16, and stand if 17 or above
         while self.dealerTurn:
             currentVal = self.checkSum()
             if currentVal <= 16:
@@ -58,20 +58,20 @@ class Dealer:
             else:
                 self.dealerTurn = False
 
-    # Print the cards dealt
+    # Print a visual of the cards dealt
     def printCards(self):
-        # When comparing hands, dealer must show both cards
+        # When comparing hands, dealer must "show" both cards
         if self.isReveal:
             for i in self.hand:
                 print(f"{i.number} of {i.suit}")
             print("Total: ", self.checkSum())
-        # When dealer is dealt 2 cards, and the player has the turn, the second dealer card is hidden.
+        # When dealer has been given cards (2), and it is players turn, dealer has 1 hidden card
         if not self.isReveal:
             print("Dealer hand:")
             print(f"{self.hand[1].number} of {self.hand[1].suit}")
             print("1 hidden card")
 
-    # Method for comparing hands, and defining outcome based on different conditions
+    # Dealer method for the comparing of hands, and defining the outcome based on different conditions
     def checkWin(self, player):
         playerSum = player.checkSum()
         currentVal = self.checkSum()
